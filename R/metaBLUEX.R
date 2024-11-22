@@ -129,11 +129,6 @@ metablue = function(summary = NULL,
         "Balakrishnan et al. (2022)'s methods are only applicable under normality assumption."
       )
     }
-    if (scenario %in% c("tertiles", "quintiles", "deciles")) {
-      message(
-        "This is an extension of Balakrishnan et al. (2022)'s original methods on other summary statistics."
-      )
-    }
     if (scenario == "S1") {
       if (length(summary) != 3) {
         stop("Incorrect length of summary statistics in scenario 1.")
@@ -156,20 +151,31 @@ metablue = function(summary = NULL,
       if (length(summary) != 2) {
         stop("Incorrect length of tertiles.")
       }
+      #message(
+      #  "This is an extension of Balakrishnan et al. (2022)'s original methods on other summary statistics."
+      #)
       return(as.numeric(tertiles_bala(summary, n)))
     }
     else if (scenario == "quintiles") {
       if (length(summary) != 4) {
         stop("Incorrect length of quintiles.")
       }
+      #message(
+      #  "This is an extension of Balakrishnan et al. (2022)'s original methods on other summary statistics."
+      #)
       return(as.numeric(quintiles_bala(summary, n)))
     }
     else if (scenario == "deciles") {
       if (length(summary) != 9) {
         stop("Incorrect length of deciles.")
       }
+      #message(
+      #  "This is an extension of Balakrishnan et al. (2022)'s original methods on other summary statistics."
+      #)
+      
       return(as.numeric(deciles_bala(summary, n)))
     }
+    
   }
   
   if (method == "yang") {
@@ -212,9 +218,9 @@ metablue = function(summary = NULL,
       }
     }
     else if (dist == "laplace") {
-      message(
-        "This is an extension of Yang et al. (2022)'s original methods on the Laplace distribution."
-      )
+      #message(
+      #  "This is an extension of Yang et al. (2022)'s original methods on the Laplace distribution."
+      #)
       if (scenario == "S1") {
         if (length(summary) != 3) {
           stop("Incorrect length of summary statistics in scenario 1.")
@@ -253,9 +259,9 @@ metablue = function(summary = NULL,
       }
     }
     else if (dist == "logistic") {
-      message(
-        "This is an extension of Yang et al. (2022)'s original methods on the logistic distribution."
-      )
+      #message(
+      #  "This is an extension of Yang et al. (2022)'s original methods on the logistic distribution."
+      #)
       if (scenario == "S1") {
         if (length(summary) != 3) {
           stop("Incorrect length of summary statistics in scenario 1.")
