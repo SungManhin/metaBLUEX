@@ -71,7 +71,7 @@
 #' 
 #' # Our approximation method
 #' metablue(fivenumber_l, n, "S3", "laplace", "approx")
-#' #  0.9887838 1.7481349
+#' #  0.9887838 1.7481349 
 #' 
 #' @author Sung Manhin \email{songwenxuan@ruc.edu.cn}
 #' 
