@@ -510,29 +510,30 @@ double Expectation_bala(double r, int n){
   return R::qnorm(pr, 0, 1, 1, 0)+Q2(r, n)*pr*((r+1)/(n+2)-pr)/2;
 }
 
-//[[Rcpp::export()]]
+
 double Covariance_bala(double r, double s, int n){
   if(((r==1)&&(s==1))||((r==n)&&(s==n))){
     return pow(-0.1565*log(log(n))+0.8949, 4);
   }
   else{
-    // may contain errors in the original paper by Balakrishnan et al. (2022)
+    // the following codes may contain errors in the original paper 
+    // by Balakrishnan et al. (2022)
+    // so we replaced them by his taylor expansion as a compromise
     // double q1=r/n;
     // double q2=s/n;
     // double a=sqrt(1-4*(q1-0.5)*(q2-0.5)+2*pow(abs(q1-q2), 0.5))/8-0.51;
     // double b=sqrt(1-4*(q1-0.5)*(q2-0.5)+2*pow(abs(q1-q2), 0.5))/2.8+1.3;
     // 
     // return pow(a*log(log(n))+b, 4);
-    // replaced by his taylor expansion
     
     double pr=r/(n+1);
-    double ps=s/(n+1);
-    double term1=R::qnorm(pr, 0, 1, 1, 0)*R::qnorm(ps, 0, 1, 1, 0);
-    double term2=Q2(r)*R::qnorm(ps, 0, 1, 1, 0)*pr*((r+1)/(n+2)-pr)/2;
-    double term3=Q1(r)*Q1(s)*pr*((s+1)/(n+2)-ps);
-    double term4=R::qnorm(pr, 0, 1, 1, 0)*Q2(s)*ps*((s+1)/(n+2)-ps)/2;
+    double qs=s/(n+1);
+    double term1=R::qnorm(pr, 0, 1, 1, 0)*R::qnorm(qs, 0, 1, 1, 0);
+    double term2=Q2(r, n)*R::qnorm(qs, 0, 1, 1, 0)*pr*((r+1)/(n+2)-pr)/2;
+    double term3=Q1(r, n)*Q1(s, n)*pr*((s+1)/(n+2)-qs);
+    double term4=R::qnorm(pr, 0, 1, 1, 0)*Q2(s, n)*qs*((s+1)/(n+2)-qs)/2;
     
-    return term1+term2+term3+term4;
+    return term1+term2+term3+term4-Expectation_bala(r, n)*Expectation_bala(s, n);
     
   }
 }
