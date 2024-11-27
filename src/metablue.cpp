@@ -516,12 +516,24 @@ double Covariance_bala(double r, double s, int n){
     return pow(-0.1565*log(log(n))+0.8949, 4);
   }
   else{
-    double q1=r/n;
-    double q2=s/n;
-    double a=sqrt(1-4*(q1-0.5)*(q2-0.5)+2*pow(abs(q1-q2), 0.5))/8-0.51;
-    double b=sqrt(1-4*(q1-0.5)*(q2-0.5)+2*pow(abs(q1-q2), 0.5))/2.8+1.3;
+    // may contain errors in the original paper by Balakrishnan et al. (2022)
+    // double q1=r/n;
+    // double q2=s/n;
+    // double a=sqrt(1-4*(q1-0.5)*(q2-0.5)+2*pow(abs(q1-q2), 0.5))/8-0.51;
+    // double b=sqrt(1-4*(q1-0.5)*(q2-0.5)+2*pow(abs(q1-q2), 0.5))/2.8+1.3;
+    // 
+    // return pow(a*log(log(n))+b, 4);
+    // replaced by his taylor expansion
     
-    return pow(a*log(log(n))+b, 4);
+    double pr=r/(n+1);
+    double ps=s/(n+1);
+    double term1=R::qnorm(pr, 0, 1, 1, 0)*R::qnorm(ps, 0, 1, 1, 0);
+    double term2=Q2(r)*R::qnorm(ps, 0, 1, 1, 0)*pr*((r+1)/(n+2)-pr)/2;
+    double term3=Q1(r)*Q1(s)*pr*((s+1)/(n+2)-ps);
+    double term4=R::qnorm(pr, 0, 1, 1, 0)*Q2(s)*ps*((s+1)/(n+2)-ps)/2;
+    
+    return term1+term2+term3+term4;
+    
   }
 }
 
