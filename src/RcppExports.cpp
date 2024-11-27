@@ -263,19 +263,6 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
-// Covariance_bala
-double Covariance_bala(double r, double s, int n);
-RcppExport SEXP _metaBLUEX_Covariance_bala(SEXP rSEXP, SEXP sSEXP, SEXP nSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< double >::type r(rSEXP);
-    Rcpp::traits::input_parameter< double >::type s(sSEXP);
-    Rcpp::traits::input_parameter< int >::type n(nSEXP);
-    rcpp_result_gen = Rcpp::wrap(Covariance_bala(r, s, n));
-    return rcpp_result_gen;
-END_RCPP
-}
 // S1_bala
 arma::vec S1_bala(arma::vec summary, double n);
 RcppExport SEXP _metaBLUEX_S1_bala(SEXP summarySEXP, SEXP nSEXP) {
@@ -443,7 +430,6 @@ static const R_CallMethodDef CallEntries[] = {
     {"_metaBLUEX_tertiles_yang_lap", (DL_FUNC) &_metaBLUEX_tertiles_yang_lap, 2},
     {"_metaBLUEX_quintiles_yang_lap", (DL_FUNC) &_metaBLUEX_quintiles_yang_lap, 2},
     {"_metaBLUEX_deciles_yang_lap", (DL_FUNC) &_metaBLUEX_deciles_yang_lap, 2},
-    {"_metaBLUEX_Covariance_bala", (DL_FUNC) &_metaBLUEX_Covariance_bala, 3},
     {"_metaBLUEX_S1_bala", (DL_FUNC) &_metaBLUEX_S1_bala, 2},
     {"_metaBLUEX_S2_bala", (DL_FUNC) &_metaBLUEX_S2_bala, 2},
     {"_metaBLUEX_S3_bala", (DL_FUNC) &_metaBLUEX_S3_bala, 2},

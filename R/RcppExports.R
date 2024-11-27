@@ -85,10 +85,6 @@ deciles_yang_lap <- function(summary, n) {
     .Call(`_metaBLUEX_deciles_yang_lap`, summary, n)
 }
 
-Covariance_bala <- function(r, s, n) {
-    .Call(`_metaBLUEX_Covariance_bala`, r, s, n)
-}
-
 S1_bala <- function(summary, n) {
     .Call(`_metaBLUEX_S1_bala`, summary, n)
 }
