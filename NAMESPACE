@@ -1,3 +1,5 @@
 useDynLib(metaBLUEX, .registration=TRUE)
 importFrom(Rcpp, evalCpp)
 exportPattern("^[[:alpha:]]+")
+export(metabluex)
+S3method(print, metabluex)

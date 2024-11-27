@@ -2,7 +2,7 @@
 #include<RcppArmadillo.h>
 using namespace arma;
 
-//[[Rcpp::export()]]
+//[[Rcpp::export(.S1_wls)]]
 arma::vec S1_wls(arma::vec summary, double n){
   double w1=4/(4+pow(n, 0.75));
   double w3=1;
@@ -17,7 +17,7 @@ arma::vec S1_wls(arma::vec summary, double n){
   return beta_hat;
 }
 
-//[[Rcpp::export()]]
+//[[Rcpp::export(.S2_wls)]]
 arma::vec S2_wls(arma::vec summary, double n){
   double w2=0.7+0.39/n;
   double w3=0;
@@ -32,7 +32,7 @@ arma::vec S2_wls(arma::vec summary, double n){
   return beta_hat;
 }
 
-//[[Rcpp::export()]]
+//[[Rcpp::export(.S3_wls)]]
 arma::vec S3_wls(arma::vec summary, double n){
   double w1=2.2/(2.2+pow(n, 0.75));
   double w2=0.7-0.72/pow(n, 0.55);
@@ -107,7 +107,7 @@ arma::mat cov_yang(arma::vec index, int n){
   return cov;
 }
 
-//[[Rcpp::export()]]
+//[[Rcpp::export(.S1_yang)]]
 arma::vec S1_yang(arma::vec summary, double n){
   int len=summary.n_elem;
   arma::vec index={1, floor(n/2)+1, n};
@@ -122,7 +122,7 @@ arma::vec S1_yang(arma::vec summary, double n){
   return inv(alpha.t()*omega*alpha)*alpha.t()*omega*summary;
 }
 
-//[[Rcpp::export()]]
+//[[Rcpp::export(.S2_yang)]]
 arma::vec S2_yang(arma::vec summary, double n){
   int len=summary.n_elem;
   arma::vec index={floor(n/4)+1, floor(n/2)+1, floor(3*n/4)+1};
@@ -137,7 +137,7 @@ arma::vec S2_yang(arma::vec summary, double n){
   return inv(alpha.t()*omega*alpha)*alpha.t()*omega*summary;
 }
 
-//[[Rcpp::export()]]
+//[[Rcpp::export(.S3_yang)]]
 arma::vec S3_yang(arma::vec summary, double n){
   int len=summary.n_elem;
   arma::vec index={1, floor(n/4)+1, floor(n/2)+1, floor(3*n/4)+1, n};
@@ -152,7 +152,7 @@ arma::vec S3_yang(arma::vec summary, double n){
   return inv(alpha.t()*omega*alpha)*alpha.t()*omega*summary;
 }
 
-//[[Rcpp::export()]]
+//[[Rcpp::export(.tertiles_yang)]]
 arma::vec tertiles_yang(arma::vec summary, double n){
   int len=summary.n_elem;
   arma::vec index={floor(n/3)+1, floor(2*n/3)+1};
@@ -167,7 +167,7 @@ arma::vec tertiles_yang(arma::vec summary, double n){
   return inv(alpha.t()*omega*alpha)*alpha.t()*omega*summary;
 }
 
-//[[Rcpp::export()]]
+//[[Rcpp::export(.quintiles_yang)]]
 arma::vec quintiles_yang(arma::vec summary, double n){
   int len=summary.n_elem;
   arma::vec index={floor(n/5)+1, floor(2*n/5)+1, floor(3*n/5)+1, floor(4*n/5)+1};
@@ -182,7 +182,7 @@ arma::vec quintiles_yang(arma::vec summary, double n){
   return inv(alpha.t()*omega*alpha)*alpha.t()*omega*summary;
 }
 
-//[[Rcpp::export()]]
+//[[Rcpp::export(.deciles_yang)]]
 arma::vec deciles_yang(arma::vec summary, double n){
   int len=summary.n_elem;
   arma::vec index={floor(n/10)+1, floor(2*n/10)+1, floor(3*n/10)+1, floor(4*n/10)+1, floor(5*n/10)+1, floor(6*n/10)+1, floor(7*n/10)+1, floor(8*n/10)+1, floor(9*n/10)+1};
@@ -261,7 +261,7 @@ arma::mat cov_yang_logit(arma::vec index, int n){
   return cov;
 }
 
-//[[Rcpp::export()]]
+//[[Rcpp::export(.S1_yang_logit)]]
 arma::vec S1_yang_logit(arma::vec summary, double n){
   int len=summary.n_elem;
   arma::vec index={1, floor(n/2)+1, n};
@@ -276,7 +276,7 @@ arma::vec S1_yang_logit(arma::vec summary, double n){
   return inv(alpha.t()*omega*alpha)*alpha.t()*omega*summary;
 }
 
-//[[Rcpp::export()]]
+//[[Rcpp::export(.S2_yang_logit)]]
 arma::vec S2_yang_logit(arma::vec summary, double n){
   int len=summary.n_elem;
   arma::vec index={floor(n/4)+1, floor(n/2)+1, floor(3*n/4)+1};
@@ -291,7 +291,7 @@ arma::vec S2_yang_logit(arma::vec summary, double n){
   return inv(alpha.t()*omega*alpha)*alpha.t()*omega*summary;
 }
 
-//[[Rcpp::export()]]
+//[[Rcpp::export(.S3_yang_logit)]]
 arma::vec S3_yang_logit(arma::vec summary, double n){
   int len=summary.n_elem;
   arma::vec index={1, floor(n/4)+1, floor(n/2)+1, floor(3*n/4)+1, n};
@@ -306,7 +306,7 @@ arma::vec S3_yang_logit(arma::vec summary, double n){
   return inv(alpha.t()*omega*alpha)*alpha.t()*omega*summary;
 }
 
-//[[Rcpp::export()]]
+//[[Rcpp::export(.tertiles_yang_logit)]]
 arma::vec tertiles_yang_logit(arma::vec summary, double n){
   int len=summary.n_elem;
   arma::vec index={floor(n/3)+1, floor(2*n/3)+1};
@@ -321,7 +321,7 @@ arma::vec tertiles_yang_logit(arma::vec summary, double n){
   return inv(alpha.t()*omega*alpha)*alpha.t()*omega*summary;
 }
 
-//[[Rcpp::export()]]
+//[[Rcpp::export(.quintiles_yang_logit)]]
 arma::vec quintiles_yang_logit(arma::vec summary, double n){
   int len=summary.n_elem;
   arma::vec index={floor(n/5)+1, floor(2*n/5)+1, floor(3*n/5)+1, floor(4*n/5)+1};
@@ -336,7 +336,7 @@ arma::vec quintiles_yang_logit(arma::vec summary, double n){
   return inv(alpha.t()*omega*alpha)*alpha.t()*omega*summary;
 }
 
-//[[Rcpp::export()]]
+//[[Rcpp::export(.deciles_yang_logit)]]
 arma::vec deciles_yang_logit(arma::vec summary, double n){
   int len=summary.n_elem;
   arma::vec index={floor(n/10)+1, floor(2*n/10)+1, floor(3*n/10)+1, floor(4*n/10)+1, floor(5*n/10)+1, floor(6*n/10)+1, floor(7*n/10)+1, floor(8*n/10)+1, floor(9*n/10)+1};
@@ -414,7 +414,7 @@ arma::mat cov_yang_lap(arma::vec index, int n){
   return cov;
 }
 
-//[[Rcpp::export()]]
+//[[Rcpp::export(.S1_yang_lap)]]
 arma::vec S1_yang_lap(arma::vec summary, double n){
   int len=summary.n_elem;
   arma::vec index={1, floor(n/2)+1, n};
@@ -429,7 +429,7 @@ arma::vec S1_yang_lap(arma::vec summary, double n){
   return inv(alpha.t()*omega*alpha)*alpha.t()*omega*summary;
 }
 
-//[[Rcpp::export()]]
+//[[Rcpp::export(.S2_yang_lap)]]
 arma::vec S2_yang_lap(arma::vec summary, double n){
   int len=summary.n_elem;
   arma::vec index={floor(n/4)+1, floor(n/2)+1, floor(3*n/4)+1};
@@ -444,7 +444,7 @@ arma::vec S2_yang_lap(arma::vec summary, double n){
   return inv(alpha.t()*omega*alpha)*alpha.t()*omega*summary;
 }
 
-//[[Rcpp::export()]]
+//[[Rcpp::export(.S3_yang_lap)]]
 arma::vec S3_yang_lap(arma::vec summary, double n){
   int len=summary.n_elem;
   arma::vec index={1, floor(n/4)+1, floor(n/2)+1, floor(3*n/4)+1, n};
@@ -459,7 +459,7 @@ arma::vec S3_yang_lap(arma::vec summary, double n){
   return inv(alpha.t()*omega*alpha)*alpha.t()*omega*summary;
 }
 
-//[[Rcpp::export()]]
+//[[Rcpp::export(.tertiles_yang_lap)]]
 arma::vec tertiles_yang_lap(arma::vec summary, double n){
   int len=summary.n_elem;
   arma::vec index={floor(n/3)+1, floor(2*n/3)+1};
@@ -474,7 +474,7 @@ arma::vec tertiles_yang_lap(arma::vec summary, double n){
   return inv(alpha.t()*omega*alpha)*alpha.t()*omega*summary;
 }
 
-//[[Rcpp::export()]]
+//[[Rcpp::export(.quintiles_yang_lap)]]
 arma::vec quintiles_yang_lap(arma::vec summary, double n){
   int len=summary.n_elem;
   arma::vec index={floor(n/5)+1, floor(2*n/5)+1, floor(3*n/5)+1, floor(4*n/5)+1};
@@ -489,7 +489,7 @@ arma::vec quintiles_yang_lap(arma::vec summary, double n){
   return inv(alpha.t()*omega*alpha)*alpha.t()*omega*summary;
 }
 
-//[[Rcpp::export()]]
+//[[Rcpp::export(.deciles_yang_lap)]]
 arma::vec deciles_yang_lap(arma::vec summary, double n){
   int len=summary.n_elem;
   arma::vec index={floor(n/10)+1, floor(2*n/10)+1, floor(3*n/10)+1, floor(4*n/10)+1, floor(5*n/10)+1, floor(6*n/10)+1, floor(7*n/10)+1, floor(8*n/10)+1, floor(9*n/10)+1};
@@ -558,7 +558,7 @@ arma::mat cov_bala(arma::vec index, int n){
   return cov;
 }
 
-//[[Rcpp::export()]]
+//[[Rcpp::export(.S1_bala)]]
 arma::vec S1_bala(arma::vec summary, double n){
   int len=summary.n_elem;
   arma::vec index={1, floor(n/2)+1, n};
@@ -573,7 +573,7 @@ arma::vec S1_bala(arma::vec summary, double n){
   return inv(alpha.t()*omega*alpha)*alpha.t()*omega*summary;
 }
 
-//[[Rcpp::export()]]
+//[[Rcpp::export(.S2_bala)]]
 arma::vec S2_bala(arma::vec summary, double n){
   int len=summary.n_elem;
   arma::vec index={floor(n/4)+1, floor(n/2)+1, floor(3*n/4)+1};
@@ -589,7 +589,7 @@ arma::vec S2_bala(arma::vec summary, double n){
 }
 
 
-//[[Rcpp::export()]]
+//[[Rcpp::export(.S3_bala)]]
 arma::vec S3_bala(arma::vec summary, double n){
   int len=summary.n_elem;
   arma::vec index={1, floor(n/4)+1, floor(n/2)+1, floor(3*n/4)+1, n};
@@ -604,7 +604,7 @@ arma::vec S3_bala(arma::vec summary, double n){
   return inv(alpha.t()*omega*alpha)*alpha.t()*omega*summary;
 }
 
-//[[Rcpp::export()]]
+//[[Rcpp::export(.tertiles_bala)]]
 arma::vec tertiles_bala(arma::vec summary, double n){
   int len=summary.n_elem;
   arma::vec index={floor(n/3)+1, floor(2*n/3)+1};
@@ -619,7 +619,7 @@ arma::vec tertiles_bala(arma::vec summary, double n){
   return inv(alpha.t()*omega*alpha)*alpha.t()*omega*summary;
 }
 
-//[[Rcpp::export()]]
+//[[Rcpp::export(.quintiles_bala)]]
 arma::vec quintiles_bala(arma::vec summary, double n){
   int len=summary.n_elem;
   arma::vec index={floor(n/5)+1, floor(2*n/5)+1, floor(3*n/5)+1, floor(4*n/5)+1};
@@ -634,7 +634,7 @@ arma::vec quintiles_bala(arma::vec summary, double n){
   return inv(alpha.t()*omega*alpha)*alpha.t()*omega*summary;
 }
 
-//[[Rcpp::export()]]
+//[[Rcpp::export(.deciles_bala)]]
 arma::vec deciles_bala(arma::vec summary, double n){
   int len=summary.n_elem;
   arma::vec index={floor(n/10)+1, floor(2*n/10)+1, floor(3*n/10)+1, floor(4*n/10)+1, floor(5*n/10)+1, floor(6*n/10)+1, floor(7*n/10)+1, floor(8*n/10)+1, floor(9*n/10)+1};
@@ -649,7 +649,7 @@ arma::vec deciles_bala(arma::vec summary, double n){
   return inv(alpha.t()*omega*alpha)*alpha.t()*omega*summary;
 }
 
-//[[Rcpp::export()]]
+//[[Rcpp::export(.S1_lap)]]
 arma::vec S1_lap(arma::vec summary, double n){
   double w1=1/(-0.468533+0.598561*pow(n, 1.60567));
   double w3=1;
@@ -664,7 +664,7 @@ arma::vec S1_lap(arma::vec summary, double n){
   return beta_hat;
 }
 
-//[[Rcpp::export()]]
+//[[Rcpp::export(.S2_lap)]]
 arma::vec S2_lap(arma::vec summary, double n){
   double w2=1/(-0.0449944+0.870993*pow(n, 0.555273));
   double w3=0;
@@ -679,7 +679,7 @@ arma::vec S2_lap(arma::vec summary, double n){
   return beta_hat;
 }
 
-//[[Rcpp::export()]]
+//[[Rcpp::export(.S3_lap)]]
 arma::vec S3_lap(arma::vec summary, double n){
   double w1=1.12159*exp(-1.13711-0.476207*n);
   double w2=1/(0.297173+0.759076*pow(n, 0.576925));
@@ -695,7 +695,7 @@ arma::vec S3_lap(arma::vec summary, double n){
   return beta_hat;
 }
 
-//[[Rcpp::export()]]
+//[[Rcpp::export(.S1_logit)]]
 arma::vec S1_logit(arma::vec summary, double n){
   double w1=65.4517/(50.3177+27.9285*pow(n, 0.992862));
   double w3=1;
@@ -710,7 +710,7 @@ arma::vec S1_logit(arma::vec summary, double n){
   return beta_hat;
 }
 
-//[[Rcpp::export()]]
+//[[Rcpp::export(.S2_logit)]]
 arma::vec S2_logit(arma::vec summary, double n){
   double w2=1/(1.66681-1.05697*pow(n, -0.996803));
   double w3=0;
@@ -725,7 +725,7 @@ arma::vec S2_logit(arma::vec summary, double n){
   return beta_hat;
 }
 
-//[[Rcpp::export()]]
+//[[Rcpp::export(.S3_logit)]]
 arma::vec S3_logit(arma::vec summary, double n){
   double w1=109.931/(-17.958+117.682*pow(n, 0.992282));
   double w2=(0.604702*n)/(0.991393+pow(n, 1.00126));

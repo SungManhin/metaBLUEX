@@ -17,7 +17,7 @@ metablue(
 
 \item{n}{the sample size.}
 
-\item{scenario}{a character string indicating which scenario of summary statistics is reported. The options for the \code{scenario} argument are as follows. 
+\item{scenario}{a character string indicating the scenario in which summary statistics is reported. The options for the \code{scenario} argument are as follows.
 \tabular{ll}{
 \code{"S1"} \tab for the median, minimum and maximum values. \cr
 \code{"S2"} \tab for the median, first and third quartiles. \cr
@@ -46,12 +46,12 @@ A vector of length two, the first element is \eqn{\hat\mu} and the second one is
 A comprehensive function for estimating the mean and standard deviation from summary statistics, incorporating both published and novel BLUE methods.
 }
 \details{
-\code{metablue} implements BLUE methods for estimating the mean and standard deviation from summary statistics, 
-including methods proposed by the authors. 
+\code{metablue} implements BLUE methods for estimating the mean and standard deviation from summary statistics,
+including methods proposed by the authors.
 Below are important notes regarding the function's arguments.
 \itemize{
-   \item \code{method = "wls"} can only be used under normality assumption and three basic scenarios. 
-   \item \code{method = "bala"} can only be used under normality assumption. Balakrishnan et al. (2022)'s approximation method is proposed for three basic scenarios only, and the authors of this package extend their method to tertiles, quintiles and deciles. Additional message will be printed when using the method in extended scenarios. 
+   \item \code{method = "wls"} can only be used under normality assumption and three basic scenarios.
+   \item \code{method = "bala"} can only be used under normality assumption. Balakrishnan et al. (2022)'s approximation method is proposed for three basic scenarios only, and the authors of this package extend their method to tertiles, quintiles and deciles. Additional message will be printed when using the method in extended scenarios.
    \item \code{method = "yang"} can be used for all six scenarios under normality assumption. The authors of this package extend their method to the Laplace and logistic distribution. Additional message will be printed when using the method in extended distributions.
    \item \code{method = "approx"} is proposed for the Laplace and logistic distribution and three basic scenarios, inspired by Wan et al. (2014), Luo et al. (2018) and Shi et al. (2020)'s works, check \url{https://github.com/sungmanhin/metaBLUEX} for approximation details.
 }
@@ -59,10 +59,10 @@ Below are important notes regarding the function's arguments.
 \examples{
 ### normal in S3 ###
 set.seed(1)
-n=100
-# mu=1, sigma=1
-r=rnorm(n, 1, 1) 
-fivenumber=fivenum(r)
+n = 100
+# mu = 1, sigma = 1
+r = rnorm(n, 1, 1)
+fivenumber = fivenum(r)
 
 # Wan, Luo and Shi's method
 metablue(fivenumber, n, "S3", "normal")
@@ -79,11 +79,11 @@ metablue(fivenumber, n, "S3", "normal", "bala")
 ### laplace in S3 ###
 library(VGAM)
 set.seed(1)
-n=100
-# mu=1, sigma=2
+n = 100
+# mu = 1, sigma = 2
 # Laplace dist. with parameters (0, 1/sqrt(2)) has mean 0 and sigma 1
-l=1+2*rlaplace(n, 0, 1/sqrt(2))
-fivenumber_l=fivenum(l)
+l = 1 + 2 * rlaplace(n, 0, 1/sqrt(2))
+fivenumber_l = fivenum(l)
 
 # Yang's method
 metablue(fivenumber_l, n, "S3", "laplace", "yang")
@@ -91,7 +91,7 @@ metablue(fivenumber_l, n, "S3", "laplace", "yang")
 
 # Our approximation method
 metablue(fivenumber_l, n, "S3", "laplace", "approx")
-#  0.9887838 1.7481349 
+#  0.9887838 1.7481349
 
 }
 \references{

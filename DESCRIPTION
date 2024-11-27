@@ -1,8 +1,8 @@
 Package: metaBLUEX
 Type: Package
 Title: BLUE Estimators for Mean and Standard Deviation from Summary Statistics in Meta-Analysis
-Version: 0.1.0
-Date: 2024-11-19
+Version: 0.2.0
+Date: 2024-11-27
 Authors@R: c(
     person("Manhin", "Sung", email = "songwenxuan@ruc.edu.cn", role =  c("aut", "cre")),
     person("Yingxuan", "Wang", email = "wangyx0304@ruc.edu.cn", role = "aut"),
@@ -23,6 +23,6 @@ License: GPL (>=3)
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.3.0
-Imports: Rcpp
+Imports: Rcpp, crayon
 LinkingTo: Rcpp, RcppArmadillo
 Suggests: VGAM
