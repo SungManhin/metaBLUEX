@@ -100,7 +100,7 @@ metablue = function(summary = NULL,
   }
   
   if (!(is.numeric(n) && n > 0 && n %% 1 == 0)) {
-    stop("Sample size is not a positive integer.")
+    stop("Sample size should be a positive integer.")
   }
   
   if (!scenario %in% c("S1", "S2", "S3", "tertiles", "quintiles", "deciles")) {
@@ -680,3 +680,4 @@ print.metabluex = function(object, ...) {
   }
   invisible(object)
 }
+
