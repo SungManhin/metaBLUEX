@@ -1,4 +1,4 @@
-# metaBLUEX<img src="" alt="showtext" height="150px" align="right" />
+# metaBLUEX<img src="https://raw.githubusercontent.com/SungManhin/metaBLUEX/refs/heads/main/man/figures/logo.png" alt="showtext" height="150px" align="right" />
 
 
 ## Introduction
