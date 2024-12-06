@@ -11,7 +11,7 @@ This package provides implementations of BLUE estimators for the mean and standa
 
 > The logo consists of a blue background, representing the **BLUE** method, and forest plot, symbolizing **meta-analysis**.
 
-## Installation
+## Installation 
 
 You can install this package by running the following code in your `R` console:
 
