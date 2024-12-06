@@ -29,6 +29,7 @@ devtools::install_github("SungManhin/metaBLUEX")
 
 ```R
 library(metaBLUEX)
+
 ### normal in S3 ###
 set.seed(1)
 n = 100
@@ -47,9 +48,12 @@ metablue(fivenumber, n, "S3", "normal", "yang")
 # Balakrishnan's method
 metablue(fivenumber, n, "S3", "normal", "bala")
 # 1.092199 0.933297
+```
+
+```R
+library(VGAM)
 
 ### laplace in S3 ###
-library(VGAM)
 set.seed(1)
 n = 100
 # mu = 1, sigma = 2
