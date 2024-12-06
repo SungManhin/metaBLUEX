@@ -1,6 +1,6 @@
 Package: metaBLUEX
 Type: Package
-Title: BLUE Estimators for Mean and Standard Deviation from Summary Statistics in Meta-Analysis
+Title: BLUE for the Mean and Standard Deviation Derived from Summary Statistics in Meta-Analysis
 Version: 0.2.0
 Date: 2024-11-27
 Authors@R: c(
