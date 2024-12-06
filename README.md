@@ -9,6 +9,8 @@ To effectively utilize these summary statistics in meta-analysis, numerous metho
 
 This package provides implementations of BLUE estimators for the mean and standard deviation across different scenarios of summary statistics and distributional assumptions. The methods included are as follows: under normality assumption, approximation formulae for BLUE estimators proposed by [Wan et al. (2014)](https://bmcmedresmethodol.biomedcentral.com/articles/10.1186/1471-2288-14-135), [Luo et al. (2018)](https://journals.sagepub.com/doi/10.1177/0962280216669183)  and [Shi et al. (2020)](https://onlinelibrary.wiley.com/doi/10.1002/jrsm.1429), approximation for the expectation vector and variance-covariance matrix in BLUE estimators proposed by [Yang et al. (2022)](https://www.tandfonline.com/doi/full/10.1080/02664763.2021.1967890) and [Balakrishnan et al. (2022)](https://journals.sagepub.com/doi/10.1177/09622802221111546); under other location-scale family distributions: approximations for BLUE estimators specifically for the logistic and Laplace distributions (developed by the authors of this package).
 
+> The logo consists of a blue background, representing the **BLUE** method, and forest plot, symbolizing **meta-analysis**.
+
 ## Installation
 
 You can install this package by running the following code in your `R` console:
