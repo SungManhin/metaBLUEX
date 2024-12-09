@@ -60,7 +60,7 @@ $$
 \left.+\frac{1}{2} p_r q_r Q_r^{\prime \prime \prime} Q_s^{\prime}+\frac{1}{2} p_s q_s Q_s^{\prime \prime \prime} Q_r^{\prime}+\frac{1}{2} p_r q_s Q_r^{\prime \prime} Q_s^{\prime \prime}\right],
 $$
 
-where $Q_r = Q(p_r)$, $p_r = r /(n+1)$ , $q_r = 1 − p_r$, and $Q^{′}_r$, $Q^{′′}_r$, $Q^{′′′}_r$, $Q^{′′′′}_r $ are the first four derivatives of the quantile function $Q(u)$ at $u = p_r$. For the most commonly used standard normal  distribution, in particular, $Q^′_r = \sqrt{2\pi} e^{\gamma^2}$ , $Q^{′'}_r = −2\sqrt{2\pi} \gamma e^{2\gamma^2}$ , $Q^{'''}_r = 2\sqrt{2}\pi^{3/2}e^{3\gamma^2} (1 +  4\gamma^2)$, $Q^{''''}_r = −4\sqrt{2}\pi^2\gamma e^{4\gamma^ 2} (7 + 12\gamma^2)$, where $\gamma=-\Phi^{-1}(\frac{r}{n+1})/\sqrt{2}$​.
+where $Q_r = Q(p_r)$, $p_r = r /(n+1)$ , $q_r = 1 − p_r$, and $Q^{′}_r$, $Q^{′′}_r$, $Q^{′′′}_r$, $Q^{\prime\prime\prime\prime} _r $ are the first four derivatives of the quantile function $Q(u)$ at $u = p_r$. For the most commonly used standard normal  distribution, in particular, $Q^′_r = \sqrt{2\pi} e^{\gamma^2}$ , $Q^{′'}_r = −2\sqrt{2\pi} \gamma e^{2\gamma^2}$ , $Q^{'''}_r = 2\sqrt{2}\pi^{3/2}e^{3\gamma^2} (1 +  4\gamma^2)$, $Q^{''''}_r = −4\sqrt{2}\pi^2\gamma e^{4\gamma^ 2} (7 + 12\gamma^2)$, where $\gamma=-\Phi^{-1}(\frac{r}{n+1})/\sqrt{2}$​.
 
 For the Laplace distribution $f_{\text{Lap}}(x)=\frac{1}{2b}\exp\left(-|x-\mu|/b\right)$, its quantile function is $F^{-1}_{\text{Lap}}(p)=\mu-b\ \mathrm{sgn}(p-0.5)\ln(1-2|p-0.5|)$; for the Logistic distribution $f_{\text{Logit}}(x)=\frac{\exp(-(x-\mu)/s)}{s(1+\exp(-(x-\mu)/s))^2}$, its quantile function is $F^{-1}_{\text{Logit}}(p)=\mu+s\ln\left({p}/{(1-p)}\right)$.
 
@@ -69,18 +69,18 @@ For the Laplace distribution $f_{\text{Lap}}(x)=\frac{1}{2b}\exp\left(-|x-\mu|/b
 Let $\boldsymbol{B}=\{\beta_{i,j:n}\}$ be the variance-covariance matrix of  $Z_{(1)},\dots,Z_{(n)}$.
 
 $$
-\beta_{r, s: n}^{1 / 4} \approx a_{\frac{r}{n}, \frac{s}{n}} \ln (\ln n)+b_{\frac{r}{n}, \frac{s}{n}},
+\beta _{r, s: n}^{1 / 4} \approx a _{\frac{r}{n}, \frac{s}{n}} \ln (\ln n)+b _{\frac{r}{n}, \frac{s}{n}},
 $$
 
 $$
-a_{q_1, q_2} \approx \frac{1}{8} \sqrt{1-4\left(q_1-0.5\right)\left(q_2-0.5\right)+2\left|q_1-q_2\right|^{0.5}}-0.51, 
+a_{q_1, q_2} \approx \frac{1}{8} \sqrt{1-4\left(q_1-0.5\right)\left(q_2-0.5\right)+2\left|q_1-q_2\right|^{0.5}}-0.51,
 $$
 
 $$
 b_{q_1, q_2} \approx \frac{1}{2.8} \sqrt{1-4\left(q_1-0.5\right)\left(q_2-0.5\right)+2\left|q_1-q_2\right|^{0.5}}+1.3.
 $$
 
-For $\beta_{1,1:n}=\beta_{n,n:n}$, use $\beta^{1/4}_{1,1:n}=\beta^{1/4}_{n,n:n}=−0.1565 \ln (\ln n) + 0.8949$ instead due to a different order of min/max order statistics's variaince.
+For $\beta _{1,1:n}=\beta _{n,n:n}$, use $\beta^{1/4} _{1,1:n}=\beta^{1/4} _{n,n:n}=−0.1565 \ln (\ln n) + 0.8949$ instead due to a different order of min/max order statistics's variaince.
 
 Expectation of $Z_{(1)},\dots,Z_{(n)}$  is derived similar to Yang's method.
 
@@ -105,11 +105,11 @@ $$
 **Logistic**
 
 $$
-\hat{\mu}=w^{\prime\prime}_{1,\mathrm{opt}}\left(\frac{a+b}{2}\right)+w^{\prime\prime}_{2,\mathrm{opt}}\left(\frac{q_{1}+q_{3}}{2}\right)+(1-w^{\prime\prime}_{1,\mathrm{opt}}-w^{\prime\prime}_{2,\mathrm{opt}})m
+\hat{\mu}=w^{\prime \prime} _{1,\mathrm{opt}}\left(\frac{a+b}{2}\right)+w^{\prime\prime} _{2,\mathrm{opt}}\left(\frac{q _{1}+q _{3}}{2}\right)+(1-w^{\prime\prime}_{1,\mathrm{opt}}-w^{\prime\prime} _{2,\mathrm{opt}})m
 $$
 
 $$
-\hat{\sigma}=w^{\prime\prime}_{3,\mathrm{opt}}\left(\frac{b-a}{2/(0.183+1.198x^{-0.426})}\right)+(1-w^{\prime\prime}_{3,\mathrm{opt}})\left(\frac{q_3-q_1}{2/(1.653+3,185x^{-1.132})}\right)
+\hat{\sigma}=w^{\prime\prime} _{3,\mathrm{opt}}\left(\frac{b-a}{2/(0.183+1.198x^{-0.426})}\right)+(1-w^{\prime\prime} _{3,\mathrm{opt}})\left(\frac{q_3-q_1}{2/(1.653+3.185x^{-1.132})}\right)
 $$
 
 | Weights / Scenarios | $\widetilde{w}_{1,\text{opt}}^{\prime\prime}$ | $\widetilde{w}_{2,\text{opt}}^{\prime\prime}$ |    $\widetilde{w}_{3,\text{opt}}^{\prime\prime}$     |
