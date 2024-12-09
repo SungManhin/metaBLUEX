@@ -27,16 +27,18 @@ devtools::install_github("SungManhin/metaBLUEX")
 ### Wan, Luo and Shi's method
 $$
 \hat{\mu} = w_{1,\text{opt}} \left(\frac{a+b}{2}\right) + w_{2,\text{opt}} \left(\frac{q_1+q_3}{2}\right) 
-+ \left(1 - w_{1,\text{opt}} - w_{2,\text{opt}}\right) m\\
++ \left(1 - w_{1,\text{opt}} - w_{2,\text{opt}}\right) m
+$$
+$$
 \hat{\sigma} = w_{3,\text{opt}} \left(\frac{b-a}{2 \mathrm{E}(Z_{(n)})}\right) + 
 \left(1 - w_{3,\text{opt}}\right) \left(\frac{q_3 - q_1}{2 \mathrm{E}(Z_{(3Q+1)})}\right)
 $$
 
 | Weights / Scenarios | $\widetilde{w}_{1,\text{opt}}$ | $\widetilde{w}_{2,\text{opt}}$ | $\widetilde{w}_{3,\text{opt}}$ |
 | :-----: | :------------------------------: | :-------------------------------: | :------------------------------: |
-| $S_1$ | $ \frac{4}{4 + n^{0.75}} $     | $ 0 $                           | $ 1 $                          |
-| $S_2$ | $ 0 $                          | $ 0.7 + \frac{0.39}{n} $        | $ 0 $                          |
-| $S_3$ | $ \frac{2.2}{2.2 + n^{0.75}} $ | $ 0.7 - \frac{0.72}{n^{0.55}} $ | $ \frac{1}{1 + 0.07 n^{0.6}} $ |
+| $S_1$ | $$ \frac{4}{4 + n^{0.75}} $$   | $$ 0 $$                         | $$ 1 $$                        |
+| $S_2$ | $$0 $$                        | $$ 0.7 + \frac{0.39}{n} $$      | $$ 0 $$                        |
+| $S_3$ | $$ \frac{2.2}{2.2 + n^{0.75}} $$ | $$ 0.7 - \frac{0.72}{n^{0.55}} $$ | $$ \frac{1}{1 + 0.07 n^{0.6}} $$ |
 
 $2 \mathrm{E}(Z_{(n)})=2\Phi^{-1}[(n-0.375)/(n+0.25)]$, $2 \mathrm{E}(Z_{(n)})=2\Phi^{-1}[(0.75n-0.125)/(n+0.25)]$.
 
@@ -44,12 +46,14 @@ $2 \mathrm{E}(Z_{(n)})=2\Phi^{-1}[(n-0.375)/(n+0.25)]$, $2 \mathrm{E}(Z_{(n)})=2
 
 Let $Z_i\sim\mathcal{N}(0,1)$, $i=1,\dots,n$, and $Z_{(1)},\dots,Z_{(n)}$ be the order statistics of $Z_{1},\dots,Z_{n}$ with sample size $n$.
 $$
-\begin{aligned}
-\mathrm{E}\left(Y_{(r)}\right)= & Q_r+\frac{p_r q_r}{2(n+2)} Q_r^{\prime \prime}+\frac{p_r q_r}{(n+2)^2}\left[\frac{1}{3}\left(q_r-p_r\right) Q_r^{\prime \prime \prime}+\frac{1}{8} p_r q_r Q_r^{\prime \prime \prime \prime}\right], \\
-\operatorname{Var}\left(Y_{(r)}\right)= & \frac{p_r q_r}{n+2} Q_r^{\prime 2}+\frac{p_r q_r}{(n+2)^2}\left[2\left(q_r-p_r\right) Q_r^{\prime} Q_r^{\prime \prime}+p_r q_r\left(Q_r^{\prime} Q_r^{\prime \prime \prime}+\frac{1}{2} Q_r^{\prime \prime 2}\right)\right], \\
-\operatorname{Cov}\left(Y_{(r)}, Y_{(s)}\right)= & \frac{p_r q_s}{n+2} Q_r^{\prime} Q_s^{\prime}+\frac{p_r q_s}{(n+2)^2}\left[\left(q_r-p_r\right) Q_r^{\prime \prime} Q_s^{\prime}+\left(q_s-p_s\right) Q_r^{\prime} Q_s^{\prime \prime}\right. \\
-& \left.+\frac{1}{2} p_r q_r Q_r^{\prime \prime \prime} Q_s^{\prime}+\frac{1}{2} p_s q_s Q_s^{\prime \prime \prime} Q_r^{\prime}+\frac{1}{2} p_r q_s Q_r^{\prime \prime} Q_s^{\prime \prime}\right],
-\end{aligned}
+\mathrm{E}\left(Y_{(r)}\right)= Q_r+\frac{p_r q_r}{2(n+2)} Q_r^{\prime \prime}+\frac{p_r q_r}{(n+2)^2}\left[\frac{1}{3}\left(q_r-p_r\right) Q_r^{\prime \prime \prime}+\frac{1}{8} p_r q_r Q_r^{\prime \prime \prime \prime}\right],
+$$
+$$
+\operatorname{Var}\left(Y_{(r)}\right)= \frac{p_r q_r}{n+2} Q_r^{\prime 2}+\frac{p_r q_r}{(n+2)^2}\left[2\left(q_r-p_r\right) Q_r^{\prime} Q_r^{\prime \prime}+p_r q_r\left(Q_r^{\prime} Q_r^{\prime \prime \prime}+\frac{1}{2} Q_r^{\prime \prime 2}\right)\right], 
+$$
+$$
+\operatorname{Cov}\left(Y_{(r)}, Y_{(s)}\right)= \frac{p_r q_s}{n+2} Q_r^{\prime} Q_s^{\prime}+\frac{p_r q_s}{(n+2)^2}\left[\left(q_r-p_r\right) Q_r^{\prime \prime} Q_s^{\prime}+\left(q_s-p_s\right) Q_r^{\prime} Q_s^{\prime \prime}\right. 
+\left.+\frac{1}{2} p_r q_r Q_r^{\prime \prime \prime} Q_s^{\prime}+\frac{1}{2} p_s q_s Q_s^{\prime \prime \prime} Q_r^{\prime}+\frac{1}{2} p_r q_s Q_r^{\prime \prime} Q_s^{\prime \prime}\right],
 $$
 where $Q_r = Q(p_r)$, $p_r = r /(n+1)$ , $q_r = 1 − p_r$, and $Q^{′}_r$, $Q^{′′}_r$, $Q^{′′′}_r$, $Q^{′′′′}_r $ are the first four derivatives of the quantile function $Q(u)$ at $u = p_r$. For the most commonly used standard normal  distribution, in particular, $Q^′_r = \sqrt{2\pi} e^{\gamma^2}$ , $Q^{′'}_r = −2\sqrt{2\pi} \gamma e^{2\gamma^2}$ , $Q^{'''}_r = 2\sqrt{2}\pi^{3/2}e^{3\gamma^2} (1 +  4\gamma^2)$, $Q^{''''}_r = −4\sqrt{2}\pi^2\gamma e^{4\gamma^ 2} (7 + 12\gamma^2)$, where $\gamma=-\Phi^{-1}(\frac{r}{n+1})/\sqrt{2}$​.
 
@@ -61,12 +65,11 @@ Let $\boldsymbol{B}=\{\beta_{i,j:n}\}$ be the variance-covariance matrix of  $Z_
 $$
 \beta_{r, s: n}^{1 / 4} \approx a_{\frac{r}{n}, \frac{s}{n}} \ln (\ln n)+b_{\frac{r}{n}, \frac{s}{n}},
 $$
-
 $$
-\begin{aligned}
-& a_{q_1, q_2} \approx \frac{1}{8} \sqrt{1-4\left(q_1-0.5\right)\left(q_2-0.5\right)+2\left|q_1-q_2\right|^{0.5}}-0.51, \\
-& b_{q_1, q_2} \approx \frac{1}{2.8} \sqrt{1-4\left(q_1-0.5\right)\left(q_2-0.5\right)+2\left|q_1-q_2\right|^{0.5}}+1.3.
-\end{aligned}
+a_{q_1, q_2} \approx \frac{1}{8} \sqrt{1-4\left(q_1-0.5\right)\left(q_2-0.5\right)+2\left|q_1-q_2\right|^{0.5}}-0.51, 
+$$
+$$
+b_{q_1, q_2} \approx \frac{1}{2.8} \sqrt{1-4\left(q_1-0.5\right)\left(q_2-0.5\right)+2\left|q_1-q_2\right|^{0.5}}+1.3.
 $$
 
 For $\beta_{1,1:n}=\beta_{n,n:n}$, use $\beta^{1/4}_{1,1:n}=\beta^{1/4}_{n,n:n}=−0.1565 \ln ( \ln n) + 0.8949$​ instead due to a different order of min/max order statistics's variaince.
@@ -78,7 +81,8 @@ Expectation of $Z_{(1)},\dots,Z_{(n)}$​​ is derived similar to Yang's method
 **Laplace**
 $$
 \hat{\mu}=w^{\prime}_{1,\mathrm{opt}}\left(\frac{a+b}{2}\right)+w^{\prime}_{2,\mathrm{opt}}\left(\frac{q_{1}+q_{3}}{2}\right)+(1-w^{\prime}_{1,\mathrm{opt}}-w^{\prime}_{2,\mathrm{opt}})m
-\\
+$$
+$$
 \hat{\sigma}=w^{\prime}_{3,\mathrm{opt}}\left(\frac{b-a}{2/(-0.008+1.462(\log(x))^{-0.988})}\right)+(1-w^{\prime}_{3,\mathrm{opt}})\left(\frac{q_3-q_1}{2/(2.042+2.919x^{-1.209})}\right)
 $$
 
@@ -90,8 +94,9 @@ $$
 
 **Logistic**
 $$
-\hat{\mu}=w^{\prime\prime}_{1,\mathrm{opt}}\left(\frac{a+b}{2}\right)+w^{\prime\prime}_{2,\mathrm{opt}}\left(\frac{q_{1}+q_{3}}{2}\right)+(1-w^{\prime\prime}_{1,\mathrm{opt}}-w^{\prime\prime}_{2,\mathrm{opt}})m\\
-
+\hat{\mu}=w^{\prime\prime}_{1,\mathrm{opt}}\left(\frac{a+b}{2}\right)+w^{\prime\prime}_{2,\mathrm{opt}}\left(\frac{q_{1}+q_{3}}{2}\right)+(1-w^{\prime\prime}_{1,\mathrm{opt}}-w^{\prime\prime}_{2,\mathrm{opt}})m
+$$
+$$
 \hat{\sigma}=w^{\prime\prime}_{3,\mathrm{opt}}\left(\frac{b-a}{2/(0.183+1.198x^{-0.426})}\right)+(1-w^{\prime\prime}_{3,\mathrm{opt}})\left(\frac{q_3-q_1}{2/(1.653+3,185x^{-1.132})}\right)
 $$
 
