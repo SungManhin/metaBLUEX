@@ -27,8 +27,7 @@ devtools::install_github("SungManhin/metaBLUEX")
 ### Wan, Luo and Shi's method
 
 $$
-\hat{\mu} = w_{1,\text{opt}} \left(\frac{a+b}{2}\right) + w_{2,\text{opt}} \left(\frac{q_1+q_3}{2}\right) 
-+ \left(1 - w_{1,\text{opt}} - w_{2,\text{opt}}\right) m
+\hat{\mu} = w_{1,\text{opt}} \left(\frac{a+b}{2}\right) + w_{2,\text{opt}} \left(\frac{q_1+q_3}{2}\right) +\left(1 - w_{1,\text{opt}} - w_{2,\text{opt}}\right) m
 $$
 
 $$
@@ -38,9 +37,9 @@ $$
 
 | Weights / Scenarios | $\widetilde{w}_{1,\text{opt}}$ | $\widetilde{w}_{2,\text{opt}}$ | $\widetilde{w}_{3,\text{opt}}$ |
 | :-----: | :------------------------------: | :-------------------------------: | :------------------------------: |
-| $S_1$ | $$ \frac{4}{4 + n^{0.75}} $$   | $$ 0 $$                         | $$ 1 $$                        |
-| $S_2$ | $$0 $$                        | $$ 0.7 + \frac{0.39}{n} $$      | $$ 0 $$                        |
-| $S_3$ | $$ \frac{2.2}{2.2 + n^{0.75}} $$ | $$ 0.7 - \frac{0.72}{n^{0.55}} $$ | $$ \frac{1}{1 + 0.07 n^{0.6}} $$ |
+| $S_1$ | $$\frac{4}{4 + n^{0.75}}$$   | $$0$$                         | $$1$$                        |
+| $S_2$ | $$0$$                        | $$0.7 + \frac{0.39}{n}$$      | $$0$$                        |
+| $S_3$ | $$\frac{2.2}{2.2 + n^{0.75}}$$ | $$0.7 - \frac{0.72}{n^{0.55}}$$ | $$\frac{1}{1 + 0.07 n^{0.6}}$$ |
 
 $2 \mathrm{E}(Z_{(n)})=2\Phi^{-1}[(n-0.375)/(n+0.25)]$, $2 \mathrm{E}(Z_{(n)})=2\Phi^{-1}[(0.75n-0.125)/(n+0.25)]$.
 
@@ -53,11 +52,11 @@ $$
 $$
 
 $$
-\operatorname{Var}\left(Y_{(r)}\right)= \frac{p_r q_r}{n+2} Q_r^{\prime 2}+\frac{p_r q_r}{(n+2)^2}\left[2\left(q_r-p_r\right) Q_r^{\prime} Q_r^{\prime \prime}+p_r q_r\left(Q_r^{\prime} Q_r^{\prime \prime \prime}+\frac{1}{2} Q_r^{\prime \prime 2}\right)\right], 
+\mathrm{Var}\left(Y_{(r)}\right)= \frac{p_r q_r}{n+2} Q_r^{\prime 2}+\frac{p_r q_r}{(n+2)^2}\left[2\left(q_r-p_r\right) Q_r^{\prime} Q_r^{\prime \prime}+p_r q_r\left(Q_r^{\prime} Q_r^{\prime \prime \prime}+\frac{1}{2} Q_r^{\prime \prime 2}\right)\right],
 $$
 
 $$
-\operatorname{Cov}\left(Y_{(r)}, Y_{(s)}\right)= \frac{p_r q_s}{n+2} Q_r^{\prime} Q_s^{\prime}+\frac{p_r q_s}{(n+2)^2}\left[\left(q_r-p_r\right) Q_r^{\prime \prime} Q_s^{\prime}+\left(q_s-p_s\right) Q_r^{\prime} Q_s^{\prime \prime}\right. 
+\mathrm{Cov}\left(Y_{(r)}, Y_{(s)}\right)= \frac{p_r q_s}{n+2} Q_r^{\prime} Q_s^{\prime}+\frac{p_r q_s}{(n+2)^2}\left[\left(q_r-p_r\right) Q_r^{\prime \prime} Q_s^{\prime}+\left(q_s-p_s\right) Q_r^{\prime} Q_s^{\prime \prime}\right. 
 \left.+\frac{1}{2} p_r q_r Q_r^{\prime \prime \prime} Q_s^{\prime}+\frac{1}{2} p_s q_s Q_s^{\prime \prime \prime} Q_r^{\prime}+\frac{1}{2} p_r q_s Q_r^{\prime \prime} Q_s^{\prime \prime}\right],
 $$
 
@@ -81,7 +80,7 @@ $$
 b_{q_1, q_2} \approx \frac{1}{2.8} \sqrt{1-4\left(q_1-0.5\right)\left(q_2-0.5\right)+2\left|q_1-q_2\right|^{0.5}}+1.3.
 $$
 
-For $\beta_{1,1:n}=\beta_{n,n:n}$, use $\beta^{1/4}_{1,1:n}=\beta^{1/4}_{n,n:n}=−0.1565 \ln ( \ln n) + 0.8949$ instead due to a different order of min/max order statistics's variaince.
+For $\beta_{1,1:n}=\beta_{n,n:n}$, use $\beta^{1/4}_{1,1:n}=\beta^{1/4}_{n,n:n}=−0.1565 \ln (\ln n) + 0.8949$ instead due to a different order of min/max order statistics's variaince.
 
 Expectation of $Z_{(1)},\dots,Z_{(n)}$  is derived similar to Yang's method.
 
